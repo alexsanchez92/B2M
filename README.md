@@ -1,27 +1,27 @@
 
-#Back To Me
+# Back To Me
 
 Final Degree Project for my IT Engineering Master in 2016 in Universidad de Alicante.
 
 Social network, Web & Mobile Application, for the management and search of lost object.
 
-##Backend
+## Backend
 
 REST Api made with PHP Phalcon Framework v7.3. It connects to a MySQL Database.
 
-##Mobile App
+## Mobile App
 
-Android application developed with Native Java and other Android Libraries 
+Android application developed with Java and other Android Libraries 
 
 ![Mobile App](imagesReadme/mobile.png)
 
-##Frontend
+## Frontend
 
-Made with AngularJS and uses the skeleton of Cliptwo Bootstrap Admin Template
+Made with AngularJS and using the skeleton of Cliptwo Bootstrap Admin Template
 
 ![Mobile App](imagesReadme/web.png)
 
-###Use Grunt and Bower
+### Use Grunt and Bower
 
 install node.js
 go to the root folder (Web) into the command line
