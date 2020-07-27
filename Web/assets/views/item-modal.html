@@ -1,0 +1,50 @@
+<script type="text/ng-template" id="itemModal.html">
+	<div class="modal-body row padding-30">
+
+		<section class="col-sm-6">
+			<figure>
+				<img ng-if="item.hasPhoto==1" class="img-responsive" ng-src="{{item.image}}" alt="{{item.title}}">
+				<img ng-if="item.hasPhoto==0" class="img-responsive" src="assets/images/no-image.png" alt="{{item.title}}">
+			</figure>
+		</section>
+		<section class="col-sm-6 modal-info">
+
+			<div class="col-xs-12">
+				<h1 class="text-primary"><strong>{{item.title}}</strong></h1>
+				<p class="margin-left-5">{{item.description}}</p>
+			</div>
+			
+			<div ng-if="item.type==1" class="col-xs-12">
+				<h4 class="text-primary">Perdido entre</h4>
+				<p class="margin-left-5">{{item.startDate}} y {{item.endDate}}</p>
+			</div>
+
+			<div ng-if="item.type==0" class="col-xs-12">
+				<h4 class="text-primary">Encontrado el</h4>
+				<p class="margin-left-5">{{formatDate(item.foundDate)}}</p>
+			</div>
+
+			<div class="col-xs-12">
+				<h4 class="text-primary">en</h4>
+				<p class="margin-left-5">{{item.place.name}}</p>
+				<p class="margin-left-5">{{item.placeDetails}}</p>
+			</div>				
+			
+			<div ng-if="item.haveIt==1 || item.type==1" class="col-xs-12">	
+				<h4 class="text-primary margin-top-10">Contactar con</h4>
+				<p class="margin-left-5">{{item.user.name}}</p>
+			</div>
+
+			<div ng-if="item.haveIt==0 && item.type==0" class="col-xs-12">	
+				<h4 class="text-primary margin-top-10">Recoger en</h4>
+				<p class="margin-left-5">{{item.holder.name}}</p>
+				<p class="margin-left-5">{{item.havePlaceDetails}}</p>
+			</div>
+		</section>
+
+	</div>
+	<div ng-hide="(item.haveIt==0 && item.type==0) || userLogged.id==item.user.id" class="text-center contact-btns">
+		<a ng-if="item.user.email" href="mailto:{{item.user.email}}"" class="btn btn-wide btn-lg btn-info margin-10"><i class="glyphicon glyphicon-envelope"></i>Email</a>
+		<a ng-if="item.user.phone" href="tel:{{item.user.prefix.prefix}}{{item.user.phone}}" class="btn btn-wide btn-lg btn-success margin-10"><i class="glyphicon glyphicon-earphone"></i>Phone</a>
+	</div>
+</script>

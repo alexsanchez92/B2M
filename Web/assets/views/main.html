@@ -1,0 +1,51 @@
+<div ng-controller="indexCtrl">
+
+	<div data-ng-include=" 'assets/views/item-modal.html' "></div>
+	
+	<section class="col-xs-12 text-center margin-top-20 margin-bottom-20">
+		<div class=" col-sm-6 col-sm-offset-3">
+			<div class="btn-group btn-select all-width found-lost">
+				<label class="btn btn-wide btn-lg btn-primary half-width padding-30 padding-top-15 padding-bottom-15" ng-model="view" uib-btn-radio="'found'">
+					Found
+				</label>
+				<label class="btn btn-wide btn-lg btn-primary half-width padding-30 padding-top-15 padding-bottom-15" ng-model="view" uib-btn-radio="'lost'">
+					Lost
+				</label>
+			</div>
+		</div>
+	</section>
+	<div class="clearfix"></div>
+
+	<section class="row" ng-if="view=='found'">
+		<article ng-repeat="item in found.data" class="item col-md-3 col-sm-6 margin-top-5">
+			<div data-ng-include=" 'assets/views/item-found.html' "></div>
+		</article>
+
+		<section class="col-xs-12 text-center margin-top-25" ng-if="!found.loaded">
+			<button ladda="ldloading.slide_up" class="btn btn-wide btn-lg btn-warning btn-more no-radius" data-style="slide-up" ng-click="loadFounds('slide-up')">
+				<i class="glyphicon glyphicon-plus"></i> Mas Found
+			</button>
+		</section>
+	</section>
+
+	<section class="row" ng-if="view=='lost'">
+		<article ng-repeat="item in lost.data" class="item col-md-3 col-sm-6 margin-top-5">
+			<div data-ng-include=" 'assets/views/item-found.html' "></div>
+		</article>
+
+		<section class="col-xs-12 text-center margin-top-25" ng-if="!lost.loaded">
+			<button ladda="ldloading.slide_up" class="btn btn-wide btn-lg btn-warning btn-more no-radius" data-style="slide-up" ng-click="loadLosts('slide-up')">
+				<i class="glyphicon glyphicon-plus"></i> Mas Lost
+			</button>
+		</section>
+	</section>
+</div>
+
+
+
+<footer ng-controller="cookiesCtrl" ng-show="!cookies" class="col-md-12 padding-30 text-center" id="cookies-div" style="position:fixed;bottom:20px; background:#314050; margin:-30px; ">	
+
+	<h2 class="col-xs-8" style="color:white;">Navegando a través de esta página aceptas la <a ui-sref="app.privacy" style="color:white;font-weight:bold;">Política de Privacidad</a> y de <a ui-sref="app.cookies" style="color:white;font-weight:bold;">Cookies</a></h2>
+	<div class="col-xs-2"><button id="cookies-btn" class="btn-primary btn-lg" style="background: white; color:#314050" ng-click="acceptCookies()">Aceptar</button></div>
+
+</footer>

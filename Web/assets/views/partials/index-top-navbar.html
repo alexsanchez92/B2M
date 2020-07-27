@@ -1,0 +1,125 @@
+<!-- start: TOP NAVBAR -->
+<!-- start: NAVBAR HEADER -->
+<div class="navbar-header" style="border-right:none;">
+	<a class="navbar-brand" ui-sref="app.index"> <img ng-src="{{app.layout.logo}}" alt="{{app.name}}"/> </a>
+	<a class="pull-right menu-toggler visible-xs-block" id="menu-toggler" ng-click="navbarCollapsed = !navbarCollapsed"> <span class="sr-only">Toggle navigation</span> <i class="ti-view-grid"></i> </a>
+</div>
+<!-- end: NAVBAR HEADER -->
+<!-- start: NAVBAR COLLAPSE -->
+<div class="navbar-collapse collapse" uib-collapse="navbarCollapsed" ng-init="navbarCollapsed = true" off-click="navbarCollapsed = true" off-click-if='!navbarCollapsed' off-click-filter="#menu-toggler">
+	<ul class="nav navbar-right" ct-fullheight="window" data-ct-fullheight-exclusion="header" data-ct-fullheight-if="isSmallDevice">
+		<!-- start: SEARCH DROPDOWN -->
+		<li class="dropdown" uib-dropdown on-toggle="toggled(open)">			
+			<a ui-sref="app.search"> <i class="glyphicon glyphicon-search"></i> <span>Buscar</span> </a>
+		</li>
+		<!--<li class="dropdown" uib-dropdown on-toggle="toggled(open)">
+			<a href class="dropdown-toggle" uib-dropdown-toggle> <i class="glyphicon glyphicon-search"></i> <span>Buscar</span> </a>
+			<ul class="dropdown-menu dropdown-light dropdown-messages dropdown-large">
+				<li>
+					<div class="drop-down-wrapper ps-container" ng-controller="searchCtrl">
+						<form class="form-login" role="form" id="searchForm" name="searchForm" ng-submit="search.submit(searchForm)" ng-click="$event.stopPropagation()">
+							<fieldset class="no-border">
+								<div class="form-group">
+									<span class="input-icon">
+										<input type="text" class="form-control" name="search" placeholder="Buscar" ng-model="search.search">
+										<i class="fa fa-search"></i> 
+									</span>
+								</div>
+								<div class="form-group">
+									<div class="clip-radio radio-primary text-center">
+										<input type="radio" id="found" name="type" value="0" ng-model="search.type">
+										<label for="found">
+											Found
+										</label>
+										<input type="radio" id="lost" name="type" value="1" ng-model="search.type">
+										<label for="lost">
+											Lost
+										</label>
+									</div>
+								</div>
+								<div class="form-actions">
+									<button type="submit" class="btn btn-primary col-xs-12">
+										Buscar
+									</button>
+								</div>
+							</fieldset>
+						</form>
+					</div>
+				</li>
+			</ul>
+		</li>-->
+		<!-- end: SEARCH DROPDOWN -->
+		<!-- start: LANGUAGE SWITCHER -->
+		<li class="dropdown" uib-dropdown on-toggle="toggled(open)">
+			<a href class="dropdown-toggle" uib-dropdown-toggle> <i class="ti-world"></i> {{language.selected}} </a>
+			<ul role="menu" class="dropdown-menu dropdown-light fadeInUpShort">
+				<li ng-repeat="(localeId, langName) in language.available">
+					<a ng-click="language.set(localeId, $event)" href="#" class="menu-toggler"> {{langName}} </a>
+				</li>
+			</ul>
+		</li>
+		<!-- start: LANGUAGE SWITCHER -->
+		<!-- start: LOGIN DROPDOWN -->
+		<li class="dropdown" uib-dropdown on-toggle="toggled(open)">
+			<a href class="dropdown-toggle" uib-dropdown-toggle> <i class="glyphicon glyphicon-user"></i> <span>Login</span> </a>
+			<ul class="dropdown-menu dropdown-light dropdown-messages dropdown-large">
+				<li>
+					<div class="drop-down-wrapper ps-container" ng-controller="loginCtrl">
+						<form class="form-login" role="form" id="loginForm" name="loginForm" ng-submit="login.submit(loginForm)" ng-click="$event.stopPropagation()">
+							<fieldset class="no-border">
+								<legend>
+									Sign in to your account
+								</legend>
+								<div class="form-group">
+									<span class="input-icon">
+										<input type="email" class="form-control" name="email" placeholder="Email" required ng-model="user.email">
+										<i class="fa fa-envelope"></i> </span>
+								</div>
+								<div class="form-group form-actions">
+									<span class="input-icon">
+										<input type="password" class="form-control password" name="password" placeholder="Password" required ng-model="user.password">
+										<i class="fa fa-lock"></i>
+										<a class="forgot" ui-sref="login.forgot">
+											I forgot my password
+										</a> </span>
+								</div>
+								<div class="form-actions">
+									<button type="submit" class="btn btn-primary col-xs-12">
+										Login
+									</button>
+								</div>
+								<div class="clearfix"></div>
+								<div class="margin-top-10 alert alert-danger alert-dismissible text-center" role="alert" ng-if="login.error.notFound">
+							  		<button ng-click="login.error.notFound=false" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							  		<strong>Email and/or pass invalid</strong>
+								</div>
+								<div class="margin-top-10 alert alert-danger alert-dismissible text-center" role="alert" ng-if="login.error.error">
+							  		<button ng-click="login.error.error=false" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							  		<strong>Error in server</strong>
+								</div>
+							</fieldset>
+						</form>
+						<!--<div class="list-group no-margin">
+							<a class="media list-group-item" href=""> <img class="img-circle" alt="..." src="assets/images/avatar-1.jpg"> <span class="media-body block no-margin"> Use awesome animate.css <small class="block text-grey">10 minutes ago</small> </span> </a>
+							<a class="media list-group-item" href=""> <span class="media-body block no-margin"> 1.0 initial released <small class="block text-grey">1 hour ago</small> </span> </a>
+						</div>-->
+					</div>
+				</li>
+			</ul>
+		</li>
+		<!-- end: LOGIN DROPDOWN -->
+		<!-- start: LOGIN
+		<li class="dropdown" uib-dropdown on-toggle="toggled(open)">
+			<a ui-sref="login.signin"> <i class="glyphicon glyphicon-user"></i> <span>Login</span> </a>
+		</li>
+		end: LOGIN -->
+	</ul>
+	<!-- start: MENU TOGGLER FOR MOBILE DEVICES -->
+	<div class="close-handle visible-xs-block menu-toggler" ng-click="navbarCollapsed = true">
+		<div class="arrow-left"></div>
+		<div class="arrow-right"></div>
+	</div>
+	<!-- end: MENU TOGGLER FOR MOBILE DEVICES -->
+</div>
+<!-- end: NAVBAR COLLAPSE -->
+<!-- start: TOP NAVBAR -->

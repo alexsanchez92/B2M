@@ -1,0 +1,53 @@
+<!-- start: TOP NAVBAR -->
+<!-- start: NAVBAR HEADER -->
+<div class="navbar-header" style="border-right:none;">
+	<a class="navbar-brand" ui-sref="user.index"> <img ng-src="{{app.layout.logo}}" alt="{{app.name}}"/> </a>
+	<a class="pull-right menu-toggler visible-xs-block" id="menu-toggler" ng-click="navbarCollapsed = !navbarCollapsed"> <span class="sr-only">Toggle navigation</span> <i class="ti-view-grid"></i> </a>
+</div>
+<!-- end: NAVBAR HEADER -->
+<!-- start: NAVBAR COLLAPSE -->
+<div class="navbar-collapse collapse" uib-collapse="navbarCollapsed" ng-init="navbarCollapsed = true" off-click="navbarCollapsed = true" off-click-if='!navbarCollapsed' off-click-filter="#menu-toggler">
+	<ul class="nav navbar-right" ct-fullheight="window" data-ct-fullheight-exclusion="header" data-ct-fullheight-if="isSmallDevice">
+		<!-- start: SEARCH DROPDOWN -->
+		<li class="dropdown" uib-dropdown on-toggle="toggled(open)">			
+			<a ui-sref="user.search"> <i class="glyphicon glyphicon-search"></i> <span>Buscar</span> </a>
+		</li>
+		<!-- end: SEARCH DROPDOWN -->
+		<!-- start: MYOBJECTS SWITCHER -->
+		<li class="dropdown" uib-dropdown on-toggle="toggled(open)">
+			<a ui-sref="user.objects"> <i class="glyphicon glyphicon-inbox"></i> Mis anuncios </a>
+		</li>
+		<!-- start: MYOBJECTS SWITCHER -->
+		<!-- start: LANGUAGE SWITCHER -->
+		<li class="dropdown" uib-dropdown on-toggle="toggled(open)">
+			<a href class="dropdown-toggle" uib-dropdown-toggle> <i class="ti-world"></i> {{language.selected}} </a>
+			<ul role="menu" class="dropdown-menu dropdown-light fadeInUpShort">
+				<li ng-repeat="(localeId, langName) in language.available">
+					<a ng-click="language.set(localeId, $event)" href="#" class="menu-toggler"> {{langName}} </a>
+				</li>
+			</ul>
+		</li>
+		<!-- start: LANGUAGE SWITCHER -->
+		<!-- start: USER OPTIONS DROPDOWN -->
+		<li class="dropdown current-user" uib-dropdown on-toggle="toggled(open)">
+			<a href class="dropdown-toggle" uib-dropdown-toggle> <!--<img src="assets/images/avatar-1.jpg" alt="{{userLogged.name}}">--> <span class="username">{{userLogged.name}} <i class="ti-angle-down"></i></i></span> </a>
+			<ul class="dropdown-menu dropdown-dark">
+				<li>
+					<a ui-sref="user.edit"> Edit Profile </a>
+				</li>
+				<li ng-controller="logOutCtrl">
+					<a ng-click="logOut.logOut();"> Log out </a>
+				</li>
+			</ul>
+		</li>
+		<!-- end: USER OPTIONS DROPDOWN -->
+	</ul>
+	<!-- start: MENU TOGGLER FOR MOBILE DEVICES -->
+	<div class="close-handle visible-xs-block menu-toggler" ng-click="navbarCollapsed = true">
+		<div class="arrow-left"></div>
+		<div class="arrow-right"></div>
+	</div>
+	<!-- end: MENU TOGGLER FOR MOBILE DEVICES -->
+</div>
+<!-- end: NAVBAR COLLAPSE -->
+<!-- start: TOP NAVBAR -->

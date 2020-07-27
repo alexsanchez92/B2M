@@ -1,0 +1,171 @@
+<!-- /// controller:  'editCtrl' -  localtion: assets/js/controllers/editCtrl.js /// -->
+<div ng-controller="editCtrl">
+	<!-- start: PAGE TITLE -->
+	<section id="page-title">
+		<div class="row">
+			<div class="margin-bottom-15">
+				<h1 class="mainTitle">My account</h1>
+			</div>
+		</div>
+	</section>
+	<!-- end: PAGE TITLE -->
+
+	<form role="form" id="myAccount" name="myAccount" novalidate ng-submit="account.submit(myAccount)">
+		<!-- START CONTAINER -->
+		<div class="container-fluid container-fullw bg-white border no-side-border">
+			<div class="row">
+				<!-- START MY ACCOUNT -->
+				<div class="col-md-12">
+					<fieldset class="border border-primary">
+						<legend>
+							Account
+						</legend>
+						<div class="row">
+							<div class="col-sm-6">
+								<div class="form-group" ng-class="{'has-error':account.submitted && myAccount.email.$dirty && myAccount.email.$invalid}">
+									<label class="control-label">
+										Email
+									</label>
+									<div class="input-group">
+										<span class="input-group-addon"> <i class="glyphicon glyphicon-envelope"></i> </span>
+										<input required type="email" placeholder="{{ 'forms.email' | translate }}" class="form-control" name="email" ng-model="account.user.email" maxlength="100">
+									</div>
+									
+									<span class="error text-small block" ng-if="account.submitted && myAccount.email.$dirty && myAccount.email.$error.required">Email is required!</span>
+									<span class="error text-small block" ng-if="account.submitted && myAccount.email.$dirty && myAccount.email.$invalid">Error in email!</span>
+								</div>
+
+								<div class="form-group">
+									<label class="control-label">
+										Nombre
+									</label>
+									<div class="input-group">
+										<span class="input-group-addon"> <i class="glyphicon glyphicon-user"></i> </span>
+										<input type="text" placeholder="{{ 'forms.position' | translate }}" class="form-control" name="name" ng-model="account.user.name" maxlength="100">
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="form-group">
+									<label class="control-label">
+										Prefix
+									</label>
+
+
+									<div class="input-group">
+										<span class="input-group-addon"> <i class="glyphicon glyphicon-globe"></i> </span>
+										
+										<ui-select ng-model="account.user.prefix" theme="bootstrap">
+											<ui-select-match placeholder="Select in the list...">
+												<strong>{{$select.selected.prefix}}</strong> {{$select.selected.name}}
+											</ui-select-match>
+											<ui-select-choices group-by="'group'" repeat="item in countries | filter: $select.search">
+												<span ng-bind-html="'+'+item.prefix | highlight: $select.search"></span>
+												<small ng-bind-html="item.name | highlight: $select.search"></small>
+											</ui-select-choices>
+										</ui-select>
+									</div>
+
+								</div>
+
+								<div class="form-group" ng-class="{'has-error':account.submitted && myAccount.phone.$dirty && myAccount.phone.$invalid}">
+									<label class="control-label">
+										Phone
+									</label>
+									<div class="input-group">
+										<span class="input-group-addon"> <i class="glyphicon glyphicon-earphone"></i> </span>
+										<input required type="phone" placeholder="{{ 'forms.phone' | translate }}" class="form-control" name="phone" ng-model="account.user.phone" maxlength="25">
+									</div>
+									<span class="error text-small block" ng-if="account.submitted && myAccount.phone.$dirty && myAccount.phone.$error.required">Email is required!</span>
+									<span class="error text-small block" ng-if="account.submitted && myAccount.phone.$dirty && myAccount.phone.$invalid">Error in email!</span>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+				<!-- END MY ACCOUNT -->
+			</div>
+		</div>
+		<!-- END CONTAINER -->
+
+		<!-- start: PAGE TITLE -->
+		<section class="margin-right-30 margin-left-30 padding-top-15 padding-bottom-15">
+			<div class="row">
+				<div class="margin-bottom-15 col-md-12 text-right text-center-sm">
+					<div class="row">
+						<button class="margin-left-5 margin-top-5 btn-primary btn btn-lg btn-wide btn-o" translate="cancel" type="button" ng-click="account.cancel()">Cancel</button>
+						<button class="margin-left-5 margin-top-5 btn-primary btn btn-lg btn-wide" translate="save" type="submit">Save</button>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- end: PAGE TITLE -->
+	</form>
+
+
+	<!-- start: PAGE TITLE -->
+	<section id="page-title">
+		<div class="row">
+			<div class="margin-bottom-15">
+				<h1 class="mainTitle">Password</h1>
+			</div>
+		</div>
+	</section>
+	<!-- end: PAGE TITLE -->
+
+	<form role="form" id="changePassword" name="changePassword" novalidate ng-submit="password.submit(changePassword)">
+		<!-- START CONTAINER -->
+		<div class="container-fluid container-fullw bg-white border no-side-border">
+			<div class="row">
+				<div class="col-xs-12">
+
+					<fieldset class="border border-primary">
+						<legend>
+							Password
+						</legend>
+						<div class="row">					
+							<!-- START CHANGE PASS -->									
+							<div class="form-group col-sm-6" ng-class="{'has-error':password.submitted && changePassword.confirmPass.$dirty && changePassword.confirmPass.$invalid}">
+								<label class="control-label">
+									New password
+								</label>
+								<input required type="password" placeholder="New password" class="form-control" name="newPass" ng-model="password.new">
+								<span class="error text-small block" ng-if="password.submitted && changePassword.newPass.$dirty && changePassword.newPass.$error.required">New password is required!</span>
+							</div>
+							<div class="form-group col-sm-6" ng-class="{'has-error':password.submitted && changePassword.confirmPass.$dirty && changePassword.confirmPass.$invalid}">
+								<label class="control-label">
+									Confirm New password
+								</label>
+								<input required type="password" placeholder="Confirm New password" class="form-control" name="confirmPass" ng-model="password.repeat" compare-to="password.new">
+								<span class="error text-small block" ng-if="password.submitted && changePassword.confirmPass.$dirty && changePassword.confirmPass.$error.required">Confirm password is required!</span>
+								<span class="error text-small block" ng-if="password.submitted && changePassword.confirmPass.$dirty && changePassword.confirmPass.$error.compareTo">Passwords do not match!</span>
+							</div>
+							<div class="form-group col-sm-6" ng-class="{'has-error':password.submitted && changePassword.pass.$dirty && changePassword.pass.$invalid}">
+								<label class="control-label">
+									Current password
+								</label>
+								<input required type="password" placeholder="Current password" class="form-control" name="pass" ng-model="password.current">
+								<span class="error text-small block" ng-if="password.submitted && changePassword.pass.$dirty && changePassword.pass.$error.required">Current password is required!</span>
+							</div>
+							<!-- END CHANGE PASS -->
+						</div>
+					</fieldset>
+				</div>
+			</div>
+		</div>
+		<!-- END CONTAINER -->
+
+		<!-- start: PAGE TITLE -->
+		<section class="margin-right-30 margin-left-30 padding-top-15 padding-bottom-15">
+			<div class="row">
+				<div class="margin-bottom-15 col-md-12 text-right text-center-sm">
+					<div class="row">
+						<button class="margin-left-5 margin-top-5 btn-primary btn btn-lg btn-wide btn-o" translate="cancel" type="button" ng-click="password.cancel()">Cancel</button>
+						<button class="margin-left-5 margin-top-5 btn-primary btn btn-lg btn-wide" translate="save" type="submit">Save</button>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- end: PAGE TITLE -->
+	</form>
+</div>

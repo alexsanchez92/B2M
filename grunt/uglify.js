@@ -1,0 +1,20 @@
+module.exports = {
+  dashv:{
+    src:[
+      'dashv/assets/js/app.src.js'
+    ],
+    dest:'dashv/assets/js/app.min.js'
+  },
+  standardversion:{
+    src:[
+      'standardversion/assets/js/app.src.js'
+    ],
+    dest:'standardversion/assets/js/app.min.js'
+  },
+  rtlversion:{
+   src:[
+      'rtlversion/assets/js/app.src.js'
+    ],
+    dest:'rtlversion/assets/js/app.min.js'
+  }
+};

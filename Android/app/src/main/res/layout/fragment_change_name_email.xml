@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+      android:id="@+id/edit_email"
+      android:layout_width="wrap_content" android:layout_height="wrap_content"
+      android:layout_gravity="center" android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/currentValue"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+            android:id="@+id/tvNew"
+        android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary" />
+
+    <EditText
+            android:id="@+id/inputNewValue"
+            android:inputType="text"
+            android:maxLength="100"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionDone" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+
+        <Button
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel"
+            android:id="@+id/cancel_button"
+            android:layout_weight="0.5"
+            android:textColor="@color/white"
+            android:background="@drawable/button_selector_primary"
+            android:layout_margin="5dp" />
+
+        <Button
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:text="@string/accept"
+            android:id="@+id/accept_button"
+            android:layout_weight="0.5"
+            android:textColor="@color/white"
+            android:background="@drawable/button_selector_primary"
+            android:layout_margin="5dp" />
+
+    </LinearLayout>
+</LinearLayout>

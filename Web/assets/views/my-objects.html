@@ -1,0 +1,83 @@
+<div ng-controller="myObjectsCtrl">
+
+	<div data-ng-include=" 'assets/views/item-modal.html' "></div>
+	
+	<section class="col-xs-12 text-center margin-top-20">
+		<div class=" col-sm-8 col-sm-offset-2">
+			<div class="btn-group btn-select all-width found-lost">
+				<label class="btn btn-wide btn-lg btn-primary third-width padding-30 padding-top-15 padding-bottom-15" ng-model="view" uib-btn-radio="'found'">
+					Found
+				</label>
+				<label class="btn btn-wide btn-lg btn-primary third-width padding-30 padding-top-15 padding-bottom-15" ng-model="view" uib-btn-radio="'lost'">
+					Lost
+				</label>
+				<label class="btn btn-wide btn-lg btn-primary third-width padding-30 padding-top-15 padding-bottom-15" ng-model="view" uib-btn-radio="'recovered'">
+					Recovered
+				</label>
+			</div>
+		</div>
+	</section>
+	<div class="clearfix"></div>
+
+	<section class="row" ng-if="view=='found'">
+		
+		<h1 class="text-center margin-top-30" ng-if="found.count==0">No found objects</h1>
+
+		<article ng-repeat="item in found.data" class="item col-md-3 col-sm-6 margin-top-30">
+
+			<div class="item-index" ng-click="showModal(item, item.type)">
+
+				<div class="overlay-container clearfix">
+				    <div class="img">
+				    	<figure>
+					        <img class="img-responsive all-width" ng-src="{{item.image || 'assets/images/no-image.png' }}" alt="{{item.title}}">
+							<h1 ng-bind="item.title"></h1>
+						</figure>
+				        <div class="overlay">
+							<i class="glyphicon glyphicon-eye-open"></i>
+				        </div>
+				    </div>
+			    </div>
+
+			</div>
+
+		</article>
+
+		<section class="col-xs-12 text-center margin-top-25" ng-if="!found.loaded">
+			<button ladda="ldloading.slide_up" class="btn btn-wide btn-lg btn-warning btn-more no-radius" data-style="slide-up" ng-click="loadFounds('slide-up')">
+				<i class="glyphicon glyphicon-plus"></i> Mas Found
+			</button>
+		</section>
+	</section>
+
+	<section class="row" ng-if="view=='lost'">
+		
+		<h1 class="text-center margin-top-30" ng-if="lost.count==0">No lost objects</h1>
+
+		<article ng-repeat="item in lost.data" class="col-md-3 col-sm-6 margin-top-30">
+			<div data-ng-include=" 'assets/views/item-found.html' "></div>
+		</article>
+
+		<section class="col-xs-12 text-center margin-top-25" ng-if="!lost.loaded">
+			<button ladda="ldloading.slide_up" class="btn btn-wide btn-lg btn-warning btn-more no-radius" data-style="slide-up" ng-click="loadLosts('slide-up')">
+				<i class="glyphicon glyphicon-plus"></i> Mas Lost
+			</button>
+		</section>
+	</section>
+
+	<section class="row" ng-if="view=='recovered'">
+		
+		<h1 class="text-center margin-top-30" ng-if="recovered.count==0">No recovered objects</h1>
+
+		<article ng-repeat="item in recovered.data" class="col-md-3 col-sm-6 margin-top-30">
+			<div data-ng-include=" 'assets/views/item-found.html' "></div>
+		</article>
+
+		<section class="col-xs-12 text-center margin-top-25" ng-if="!recovered.loaded">
+			<button ladda="ldloading.slide_up" class="btn btn-wide btn-lg btn-warning btn-more no-radius" data-style="slide-up" ng-click="loadRecovered('slide-up')">
+				<i class="glyphicon glyphicon-plus"></i> Mas Recovered
+			</button>
+		</section>
+	</section>
+
+</div>

@@ -1,0 +1,127 @@
+<div ng-controller="searchCtrl">
+
+	<div data-ng-include=" 'assets/views/item-modal.html' "></div>
+	
+	<section class="col-xs-12 text-center margin-top-20">
+		<div class=" col-sm-8 col-sm-offset-2">
+			<form class="form-login" role="form" id="searchForm" name="searchForm" ng-submit="search.submit(searchForm)" ng-click="$event.stopPropagation()">
+				<fieldset class="border border-primary">
+					<div class="form-group col-sm-8">
+						<span class="input-icon">
+							<input type="text" class="form-control input-lg" name="search" placeholder="Buscar" ng-model="search.search" required>
+							<i class="fa fa-search padding-5" style="font-size:1.4em;"></i> 
+						</span>
+					</div>
+					<div class="form-group col-sm-4">
+
+						<div class="btn-group found-lost">
+							<label class="btn btn-wide btn-lg btn-primary half-width padding-10" ng-model="search.type" uib-btn-radio="0">
+								Found
+							</label>
+							<label class="btn btn-wide btn-lg btn-primary half-width padding-10" ng-model="search.type" uib-btn-radio="1">
+								Lost
+							</label>
+						</div>
+
+						<!--<div class="clip-radio radio-primary text-center">
+							<input type="radio" id="itemPage" name="typePage" value="0" ng-model="search.type">
+							<label for="itemPage">
+								Found
+							</label>
+							<input type="radio" id="lostPage" name="typePage" value="1" ng-model="search.type">
+							<label for="lostPage">
+								Lost
+							</label>
+						</div>-->
+					</div>
+					
+					<div class="clearfix"></div>
+
+					<h5 class="text-right text-center-sm margin-top-20 padding-right-30 cursor-pointer" ng-click="changeShowSearch();">Búsqueda avanzada <i ng-show="!showSearch" class="glyphicon glyphicon-plus"></i><i ng-show="showSearch" class="glyphicon glyphicon-minus"></i></h5>
+
+					<div ng-show="showSearch">
+						
+						<div class="form-group col-sm-6" ng-controller="DatepickerCtrl">
+							<label class="control-label col-sm-12 no-padding sr-only">
+								From
+							</label>
+							<div class="input-group">
+
+								<span class="input-group-btn">											
+								<button type="button" class="btn btn-default btn-primary no-radius">
+									<i class="glyphicon glyphicon-calendar"></i>
+								</button>
+								</span>
+
+								<input 
+								type="text" placeholder="Desde" class="form-control" uib-datepicker-popup="{{formats[0]}}" is-open="opened" ng-init="fromOpened = false" max-date="search.date.end" datepicker-options="dateOptions" date-disabled="disabled(date, day)" close-text="X" name="from"
+								  ng-model="search.date.start"  ng-click="open($event)"  ng-required="search.date.end"/>
+							</div>
+						</div>
+						<div class="form-group col-sm-6" ng-controller="DatepickerCtrl">
+							<label class="control-label col-sm-12 no-padding sr-only">
+								To
+							</label>
+							<div class="input-group">
+
+								<span class="input-group-btn">											
+								<button type="button" class="btn btn-default btn-primary no-radius" ng-click="open($event)">
+									<i class="glyphicon glyphicon-calendar"></i>
+								</button>
+								</span>
+
+								<input 
+								type="text" placeholder="Hasta" class="form-control" uib-datepicker-popup="{{formats[0]}}" is-open="opened" ng-init="fromOpened = false"
+								 max-date="maxToday" min-date="search.date.start" datepicker-options="dateOptions" date-disabled="disabled(date, day)" close-text="X" name="to"
+								  ng-model="search.date.end"  ng-click="open($event)" ng-required="search.date.start"/>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="col-sm-6 margin-top-30">
+								<div class="input-group">
+									<span class="input-group-addon"> <i class="fa fa-building"></i> </span>
+									<input type="text" class="form-control" name="place" placeholder="Lugar" ng-model="search.place">
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					
+					
+					<div class="clearfix"></div>
+
+					<div class="form-actions margin-top-30">
+						<button type="submit" class="btn btn-primary col-sm-4 col-sm-offset-4">
+							Buscar
+						</button>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</section>
+	<div class="clearfix"></div>
+
+	<!--<div class="col-md-12">
+			{{search}}
+	</div>
+	<div class="col-md-12">
+			{{params}}
+	</div>-->
+	<section class="row">
+
+		<h1 ng-if="items.count==0 && items.loaded" class="text-center margin-top-30">No items found</h1>
+
+		<article ng-repeat="item in items.data" class="item col-md-3 col-sm-6 margin-top-30">
+			<div data-ng-include=" 'assets/views/item-found.html' "></div>
+		</article>
+
+		<section class="col-xs-12 text-center margin-top-25" ng-if="!items.loaded && items.data.length">
+			<button ladda="ldloading.slide_up" class="btn btn-wide btn-lg btn-warning btn-more no-radius" data-style="slide-up" ng-click="loadItems('slide-up')">
+				<i class="glyphicon glyphicon-plus"></i> Cargar más
+			</button>
+		</section>
+	</section>
+
+</div>

@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+tools:context=".activities.IndexActivity">
+
+    <item
+        android:id="@+id/adjust"
+        android:title="@string/resize"
+        android:icon="@drawable/ic_resize"
+        app:showAsAction="ifRoom" />
+
+    <!--app:showAsAction="never"-->
+</menu>

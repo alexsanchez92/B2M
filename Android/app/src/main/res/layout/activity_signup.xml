@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            app:titleTextColor="@color/white"
+            app:subtitleTextColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+        </android.support.v7.widget.Toolbar>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:background="@color/colorPrimary">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ScrollView
+                    android:id="@+id/login_form"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="20dp"
+                    android:padding="20dp"
+                    android:background="@drawable/login_window">
+
+                    <LinearLayout
+                        android:id="@+id/email_login_form"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:layout_marginBottom="30dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/imgApp"
+                                android:background="@drawable/ic_logo_dark" />
+                        </LinearLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/name"
+                                android:maxLength="100"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/prompt_name"
+                                android:maxLines="1"
+                                android:singleLine="true" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/email"
+                                android:maxLength="100"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/prompt_email"
+                                android:inputType="textEmailAddress"
+                                android:maxLines="1"
+                                android:singleLine="true" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <Spinner
+                                android:layout_width="0px"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/spinnerCountry"
+                                android:layout_weight="0.3" />
+
+                            <android.support.design.widget.TextInputLayout
+                                android:layout_width="0px"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.7">
+
+                                <EditText
+                                    android:id="@+id/phone"
+                                    android:maxLength="25"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="@string/prompt_phone"
+                                    android:maxLines="1"
+                                    android:singleLine="true"
+                                    android:inputType="textPhonetic" />
+
+                            </android.support.design.widget.TextInputLayout>
+                        </LinearLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/password"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/prompt_password"
+                                android:imeActionId="@+id/login"
+                                android:imeActionLabel="@string/action_sign_in_short"
+                                android:imeOptions="actionUnspecified"
+                                android:inputType="textPassword"
+                                android:maxLines="1"
+                                android:singleLine="true" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/repeat_password"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/prompt_repeat_password"
+                                android:imeActionId="@+id/login"
+                                android:imeActionLabel="@string/action_sign_in_short"
+                                android:imeOptions="actionUnspecified"
+                                android:inputType="textPassword"
+                                android:maxLines="1"
+                                android:singleLine="true" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/layoutCheck"
+                            android:focusable="false"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:background="#ffffff">
+
+                            <CheckBox
+                                android:layout_margin="2dp"
+                                android:paddingLeft="7dp"
+                                android:button="@drawable/checkbox_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/accept_the"
+                                android:id="@+id/acceptCheck"
+                                android:background="@color/white"
+                                android:textColor="@color/colorPrimary" />
+
+                            <Button
+                                android:layout_margin="2dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/buttonTerms"
+                                android:onClick="clickTerms"
+                                android:text="@string/terms"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:background="@null"
+                                android:singleLine="true"
+                                android:textAllCaps="false"
+                                android:layout_marginLeft="2dp" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/error_login"
+                            android:id="@+id/tvError"
+                            android:textColor="@color/dangerColor"
+                            android:textStyle="bold"
+                            android:layout_margin="10dp"
+                            android:gravity="center"
+                            android:visibility="invisible" />
+
+                        <Button
+                            android:id="@+id/btnSignup"
+                            style="?android:textAppearanceSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Registrar"
+                            android:textStyle="bold"
+                            android:layout_marginTop="30dp"
+                            android:background="@drawable/button_selector_primary"
+                            android:textColor="@color/white"
+                            android:onClick="startLogin"
+                            android:paddingLeft="30dp"
+                            android:paddingRight="30dp" />
+
+                    </LinearLayout>
+                </ScrollView>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <!--</android.support.design.widget.AppBarLayout>-->
+
+</android.support.design.widget.CoordinatorLayout>
+
+
+

@@ -1,0 +1,124 @@
+<resources>
+
+    <string name="yes">SI</string>
+    <string name="no">NO</string>
+
+    <!-- TITLES & MENU -->
+    <string name="new_add">Publicar anuncio</string>
+    <string name="my_adds">Mis anuncios</string>
+    <string name="post_add">Publicar anuncio</string>
+    <string name="search">Buscar</string>
+    <string name="settings">Configuración</string>
+    <string name="signout">Cerrar sesión</string>
+    <string name="login">Login</string>
+    <string name="recover">Recuperar</string>
+    <string name="recover_text">¿En serio? Nos alegramos muchísimo que lo hayas recuperado</string>
+    <string name="accept">Aceptar</string>
+    <string name="new_email">Nuevo email</string>
+    <string name="new_phone">Nuevo teléfono</string>
+    <string name="new_name">Nuevo nombre</string>
+    <string name="cancel">Cancelar</string>
+    <string name="delete">Borrar</string>
+    <string name="long_max">Longitud máxima es </string>
+    <string name="signup">Registrar</string>
+    <string name="error_internet">Error de conexión a internet</string>
+    <string name="error_internet_mes">Intenta conectarte a una conexión de red</string>
+    <string name="pass_invalid">Contraseña inválida</string>
+
+    <string name="between">Entre el</string>
+    <string name="between_and">y el</string>
+    <string name="found">Encontrado</string>
+    <string name="lost">Perdido</string>
+    <string name="the">El</string>
+    <string name="in">En</string>
+    <string name="contact_with">Contactar con</string>
+    <string name="send_email">Enviar email</string>
+    <string name="call_phone">Llamar</string>
+    <string name="i_ve_recovered">¡Lo he recuperado!</string>
+    <string name="recover_university">Recoger en Universidad</string>
+    <string name="have_it">Lo tengo yo</string>
+
+
+
+
+
+    <string name="go_back">¿Volver atrás?</string>
+    <string name="delete_item">El anuncio será borrado</string>
+
+    <string name="name_changed">Nombre cambiado</string>
+    <string name="email_changed">Email cambiado</string>
+    <string name="phone_changed">Teléfono cambiado</string>
+    <string name="object_left">Objeto dejado</string>
+    <string name="building_changed">Edificio cambiado</string>
+    <string name="password_changed">Contraseña cambiada</string>
+    <string name="has_name">¿Tiene algún nombre escrito?</string>
+    <string name="where_found">¿Dónde lo encontraste?</string>
+    <string name="when_found">¿Cuándo lo encontraste?</string>
+    <string name="who_has">¿Dónde está?</string>
+    <string name="where_lost">¿Dónde lo perdiste?</string>
+    <string name="when_lost">¿Cuándo lo perdiste?</string>
+
+    <string name="select_building">Debes seleccionar un lugar</string>
+
+    <string name="resize">Reajustar</string>
+    <string name="founds">Encontrado</string>
+    <string name="losts">Perdido</string>
+    <string name="recovered">Recuperado</string>
+
+    <string name="navigation_drawer_open">Abrir menú</string>
+    <string name="navigation_drawer_close">Cerrar menú</string>
+
+    <string name="post">Publicar</string>
+    <string name="action_settings">Configuración</string>
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_signup">Registro</string>
+
+    <!-- Strings related to login -->
+    <string name="name_invalid">Nombre inválido</string>
+    <string name="email_invalid">Email inválido</string>
+    <string name="phone_invalid">Teléfono incorrecto</string>
+    <string name="email_exist">Este email ya existe</string>
+    <string name="phone_exist">El teléfono ya existe</string>
+    <string name="email_phone_exist">Este correo electrónico y / o teléfono ya existe</string>
+
+    <string name="is_required">Campo requerido</string>
+    <string name="load_more">Cargar más...</string>
+    <string name="dont_have">No hay anuncios creados</string>
+    <string name="dont_have_recovered">No hay anuncios recuperados</string>
+
+    <string name="text_change_building">Indica dónde puede recogerse el objeto así como los detalles, si fuesen necesarios</string>
+
+    <string name="leave_place">Dejar en la universidad</string>
+    <string name="prompt_phone">Teléfono</string>
+    <string name="prompt_title">Título</string>
+    <string name="prompt_description">Descripción</string>
+    <string name="prompt_property">Propiedad</string>
+    <string name="prompt_place">Lugar</string>
+    <string name="prompt_details">Detalles</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_name">Nombre</string>
+    <string name="change_pass">Cambiar contraseña</string>
+    <string name="prompt_current_password">Contraseña actual</string>
+    <string name="prompt_new_password">Nueva Contraseña</string>
+    <string name="prompt_repeat_new_password">Repetir Nueva Contraseña</string>
+    <string name="prompt_password">Contraseña</string>
+    <string name="prompt_repeat_password">Repetir Contraseña</string>
+    <string name="action_sign_in">Login o registrar</string>
+    <string name="action_sign_in_short">Login</string>
+    <string name="error_invalid_email">Email inválido</string>
+    <string name="error_invalid_phone">Teléfono inválido</string>
+    <string name="error_invalid_password">La contraseña no puede estar vacía</string>
+    <string name="error_password_not_match">Las contraseñas no coinciden</string>
+    <string name="current_pass_invalid">Contraseña actual errónea</string>
+    <string name="error_incorrect_password">Contraseña incorrecta</string>
+    <string name="error_login">Email y/o contraseña incorrecto</string>
+    <string name="error_field_required">Campo requerido</string>
+    <string name="some_error">Ocurrió un error</string>
+    <string name="loading">Cargando...</string>
+    <string name="sending">Enviando...</string>
+    <string name="deleting">Eliminando...</string>
+    <string name="recovering">Recuperando...</string>
+    <string name="error_accept_terms">Debes aceptar los términos</string>
+    <string name="terms">términos y condiciones de BackToMe</string>
+    <string name="terms_b2m">Términos BackToMe</string>
+</resources>

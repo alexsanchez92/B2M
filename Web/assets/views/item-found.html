@@ -1,0 +1,56 @@
+<!--<div class="item-index" ng-click="showModal(item, 0)">
+
+	<div class="overlay-container clearfix">
+	    <div class="img">
+	    	<figure>
+		        <img class="img-responsive all-width" ng-src="{{item.image || 'assets/images/no-image.png' }}" alt="{{item.title}}">
+				<h1 ng-bind="item.title"></h1>
+			</figure>
+	        <div class="overlay">
+				<i class="glyphicon glyphicon-eye-open"></i>
+	        </div>
+	    </div>
+    </div>
+</div>
+
+<div ng-show="item.haveIt==1 && userLogged.id!=item.user.id" class="text-center margin-top-15 contact-btns">
+	<a ng-if="item.user.email" href="mailto:{{item.user.email}}" class="btn btn-wide btn-lg btn-primary margin-10"><i class="glyphicon glyphicon-envelope"></i>Email</a>
+	<a ng-if="item.user.phone" href="tel:{{item.user.phone}}" class="btn btn-wide btn-lg btn-success margin-10"><i class="glyphicon glyphicon-earphone"></i>Phone</a>
+</div>
+
+<div ng-hide="item.haveIt==1 && userLogged.id!=item.user.id" class="text-center margin-top-15 contact-btns">
+	<a class="btn btn-wide btn-lg btn-primary margin-10"><i class="glyphicon glyphicon-home"></i>Recoger en Universidad</a>
+</div>
+-->
+
+<div class="item-index" ng-click="showModal(item, item.type)">
+
+	<div class="overlay-container clearfix">
+	    <div class="img">
+	    	<figure>
+	    		<img ng-if="item.hasPhoto==1" class="img-responsive all-width" ng-src="{{item.image}}" alt="{{item.title}}">
+		        <img ng-if="item.hasPhoto==0" class="img-responsive all-width" src="assets/images/no-image.png" alt="{{item.title}}">
+				<h1 ng-bind="item.title"></h1>
+			</figure>
+	        <div class="overlay">
+				<i class="glyphicon glyphicon-eye-open"></i>
+	        </div>
+	    </div>
+    </div>
+
+</div>
+
+<div ng-show="(item.type==1 || item.haveIt==1) && userLogged.id!=item.user.id" class="text-center margin-top-15 contact-btns">
+	<a ng-if="item.user.email" href="mailto:{{item.user.email}}" class="btn btn-wide btn-lg btn-info margin-10"><i class="glyphicon glyphicon-envelope"></i>Email</a>
+	<a ng-if="item.user.phone" href="tel:{{item.user.prefix.prefix}}{{item.user.phone}}" class="btn btn-wide btn-lg btn-success margin-10"><i class="glyphicon glyphicon-earphone"></i>Phone</a>
+</div>
+
+
+<div ng-show="item.type==0">	
+	<div ng-show="item.haveIt==0" class="text-center margin-top-15 contact-btns">
+		<a class="btn btn-wide btn-lg btn-primary margin-10 no-cursor-pointer"><i class="glyphicon glyphicon-home"></i>Recoger en Universidad</a>
+	</div>	
+	<div ng-show="item.haveIt==1 && userLogged.id==item.user.id" class="text-center margin-top-15 contact-btns">
+		<a class="btn btn-wide btn-lg btn-warning margin-10 no-cursor-pointer"><i class="glyphicon glyphicon-user"></i>Lo tengo yo</a>
+	</div>
+</div>

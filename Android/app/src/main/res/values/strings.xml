@@ -1,0 +1,142 @@
+<resources>
+    <string name="facebook_app_id" translatable="false">988978664556570</string>
+    <string name="google_app_id" translatable="false">847195209553-00g38ip47740kvsl8c34rf3gf5girf4j.apps.googleusercontent.com</string>
+    <string name="google_maps_key" translatable="false">AIzaSyAFYemWej5VgMEJDj6VwlMV8XCd5qzIBx8</string>
+
+    <string name="yes">YES</string>
+    <string name="no">NO</string>
+
+    <!-- TITLES & MENU -->
+    <string name="app_name" translatable="false">Back2Me</string>
+    <string name="new_add">Post ad</string>
+    <string name="my_adds">My ads</string>
+    <string name="post_add">Post ad</string>
+    <string name="search">Search</string>
+    <string name="settings">Settings</string>
+    <string name="signout">Logout</string>
+    <string name="login">Login</string>
+    <string name="recover">Recover</string>
+    <string name="recover_text">Really? Glad we were that you\'ve recovered</string>
+    <string name="accept">Accept</string>
+    <string name="accept_the">*Acepto los</string>
+    <string name="terms">BackToMe terms</string>
+    <string name="terms_b2m">BackToMe Terms</string>
+    <string name="terms_string" translatable="false">BackToMe dispone de un fichero automatizado con datos de carácter personal así como de un archivo documental general conteniendo datos personales, los cuales se encuentran registrados en el Registro General de Agencia Española de Protección de Datos.
+La finalidad de su creación, existencia y mantenimiento es el tratamiento de los datos con los exclusivos fines de cumplir con el objeto social.
+
+\r\n Los destinatarios de la información son todos los departamentos, compartimentos, locales y entes asociados en los que se organiza, así como los estamentos oficiales
+que por Ley exijan la cesión.
+
+\r\n Las respuestas a las preguntas planteadas en el presente formulario tienen carácter informativo.
+
+\r\n La negativa a facilitar los datos solicitados traerá como consecuencia la imposibilidad de ser asistido por nuestros servicios.
+
+\r\n En todo caso usuario tiene derecho a  ejercitar los derechos de  oposición, acceso, rectificación y cancelación en el ámbito reconocido por la Ley Orgánica 15/1999 de 13 de diciembre, por los cauces de lo dispuesto en el R.D. 1720/2007, de 21 de Diciembre, por el que se aprueba el Reglamento de desarrollo de la Ley Orgánica 15/1999, de 13 de diciembre de protección de datos personales.
+
+\r\n El responsable del fichero es BackToME y para ejercitar los derechos arriba mencionados, y para cualquier aclaración, puede dirigirse por escrito al correo info@bwm.es. Enterado y conforme con lo expuesto en el apartado anterior, por la presente, CONSIENTO EXPRESAMENTE Y AUTORIZO a B2M para que trate los datos personales que voluntariamente cedo en documentos adjuntos, de acuerdo con lo dispuesto en la Ley 15/1999 de 13 de diciembre y en la Directiva 95/46 Directiva 95/46/CE del parlamento europeo y del consejo, limitando la referida autorización al cumplimiento de los fines directamente relacionados con las funciones legítimas del cesionario en el ámbito de la institución, sus departamentos, entes colaboradores e instituciones anejas, así como la cesión a los estamentos oficiales públicos y privados oportunos necesarios para el eficaz desempeño de sus atribuciones y el cumplimiento de su objetivo. .</string>
+
+    <string name="new_email">New email</string>
+    <string name="new_phone">New phone</string>
+    <string name="new_name">New name</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+    <string name="long_max">Max length is</string>
+    <string name="signup">Sign Up</string>
+    <string name="error_internet">Internet connection failure</string>
+    <string name="error_internet_mes">Try connecting to a network connection</string>
+    <string name="pass_invalid">Pass is invalid</string>
+
+    <string name="between">Between</string>
+    <string name="between_and">and</string>
+    <string name="found">Found</string>
+    <string name="lost">Lost</string>
+    <string name="the">The</string>
+    <string name="in">In</string>
+    <string name="contact_with">Contact with</string>
+    <string name="send_email">Send email</string>
+    <string name="call_phone">Call</string>
+    <string name="error_login_facebook">Error with Facebook</string>
+    <string name="i_ve_recovered">I have recovered it!</string>
+    <string name="recover_university">Pickup in University</string>
+    <string name="have_it">I have it</string>
+
+    <string name="go_back">Go back?</string>
+    <string name="delete_item">Ad will be deleted</string>
+
+    <string name="name_changed">Name changed</string>
+    <string name="email_changed">Email changed</string>
+    <string name="phone_changed">Phone changed</string>
+    <string name="object_left">Object left</string>
+    <string name="building_changed">Building changed</string>
+    <string name="password_changed">Pass changed</string>
+    <string name="has_name">Does it have any written name?</string>
+    <string name="where_found">Where did you found?</string>
+    <string name="when_found">When did you found?</string>
+    <string name="who_has">Where is?</string>
+    <string name="where_lost">Where did you lose?</string>
+    <string name="when_lost">When did you lose?</string>
+
+    <string name="select_building">You must select a place</string>
+
+    <string name="resize">Resize</string>
+    <string name="founds">Founds</string>
+    <string name="losts">Losts</string>
+    <string name="recovered">Retrieved</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="post">Post</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="title_activity_signup">Sign up</string>
+
+    <!-- Strings related to login -->
+    <string name="name_invalid">Name is invalid</string>
+    <string name="email_invalid">Email is invalid</string>
+    <string name="phone_invalid">Phone is invalid</string>
+    <string name="email_exist">This email already exists</string>
+    <string name="phone_exist">This phone already exists</string>
+    <string name="email_phone_exist">This email and/or phone already exists</string>
+
+    <string name="is_required">Field is required</string>
+    <string name="load_more">Load more...</string>
+    <string name="dont_have">No created items</string>
+    <string name="dont_have_recovered">No recovered items</string>
+
+    <string name="text_change_building">It indicates where the object can be collected and details , if they were necessary</string>
+
+    <string name="leave_place">Leave at university</string>
+    <string name="prompt_phone">Phone</string>
+    <string name="prompt_title">Title</string>
+    <string name="prompt_description">Description</string>
+    <string name="prompt_property">Property</string>
+    <string name="prompt_place">Place</string>
+    <string name="prompt_details">Details</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_name">Name</string>
+    <string name="change_pass">Change Password</string>
+    <string name="prompt_current_password">Current Password</string>
+    <string name="prompt_new_password">New Password</string>
+    <string name="prompt_repeat_new_password">Repeat New Password</string>
+    <string name="prompt_password">Password</string>
+    <string name="prompt_repeat_password">Repeat Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="login_with_fb">Entrar con Facebook</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_phone">This phone is invalid</string>
+    <string name="error_accept_terms">You have to accept the terms</string>
+    <string name="error_invalid_password">Password can not be empty</string>
+    <string name="error_password_not_match">Passwords do not match</string>
+    <string name="current_pass_invalid">Current pass is invalid</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_login">Email and/or password incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="some_error">An error happened</string>
+    <string name="loading">Loading...</string>
+    <string name="sending">Sending...</string>
+    <string name="deleting">Removing...</string>
+    <string name="recovering">Retrieving...</string>
+
+</resources>
